@@ -1,0 +1,14 @@
+Compiled with the arduino ide v. 1.05-r2-at90usb1286-master
+
+repetier software
+
+firmware from  https://www.arduino.cc/en/Main/ArduinoMateria101
+
+must be modified for:
+ z speed
+ x & y homing direction
+ RAMPS config (extruder-fan-bed)
+build size
+activate bed
+
+
