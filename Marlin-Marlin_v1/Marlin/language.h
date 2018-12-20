@@ -27,7 +27,7 @@
 
 #define PROTOCOL_VERSION "1.0"
 
-#define MACHINE_3D 1
+//#define MACHINE_3D 1
 
 #if MACHINE_3D == 1
 #define MACHINE_NAME "MATERIA 101"
@@ -85,7 +85,7 @@
 #if LANGUAGE_CHOICE == 1
 
 // LCD Menu Messages
-	#define WELCOME_MSG MACHINE_NAME
+//	#define WELCOME_MSG MACHINE_NAME
 // Please note these are limited to 17 characters!
 
 	#define WELCOME_MSG MACHINE_NAME

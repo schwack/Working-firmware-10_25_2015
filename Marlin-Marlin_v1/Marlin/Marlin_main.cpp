@@ -144,20 +144,23 @@ Display menu
 // M150 - Set BlinkM Color Output R: Red<0-255> U(!): Green<0-255> B: Blue<0-255> over i2c, G for green does not work.
 // M190 - Sxxx Wait for bed current temp to reach target temp. Waits only when heating
 //        Rxxx Wait for bed current temp to reach target temp. Waits when heating and cooling
-// M200 D<millimeters>- set filament diameter and set E axis units to cubic millimeters (use S0 to set back to millimeters).
+// M200 - D<millimeters>- set filament diameter and set E axis units to cubic millimeters (use S0 to set back to millimeters).
 // M201 - Set max acceleration in units/s^2 for print moves (M201 X1000 Y1000)
 // M202 - Set max acceleration in units/s^2 for travel moves (M202 X1000 Y1000) Unused in Marlin!!
 // M203 - Set maximum feedrate that your machine can sustain (M203 X200 Y200 Z300 E10000) in mm/sec
-// M204 - Set default acceleration: S normal moves T filament only moves (M204 S3000 T7000) in mm/sec^2  also sets minimum segment time in ms (B20000) to prevent buffer under-runs and M20 minimum feedrate
-// M205 -  advanced settings:  minimum travel speed S=while printing T=travel only,  B=minimum segment time X= maximum xy jerk, Z=maximum Z jerk, E=maximum E jerk
+// M204 - Set default acceleration: S normal moves T filament only moves (M204 S3000 T7000) in mm/sec^2  
+//	  also sets minimum segment time in ms (B20000) to prevent buffer under-runs and M20 minimum feedrate
+// M205 - advanced settings:  minimum travel speed S=while printing T=travel only,  B=minimum segment time 
+//	  X = maximum xy jerk, Z = maximum Z jerk, E = maximum E jerk
 // M206 - set additional homing offset
 // M207 - set retract length S[positive mm] F[feedrate mm/min] Z[additional zlift/hop], stays in mm regardless of M200 setting
 // M208 - set recover=unretract length S[positive mm surplus to the M207 S*] F[feedrate mm/sec]
-// M209 - S<1=true/0=false> enable automatic retract detect if the slicer did not support G10/11: every normal extrude-only move will be classified as retract depending on the direction.
+// M209 - S<1=true/0=false> enable automatic retract detect if the slicer did not support G10/11: 
+//	  every normal extrude-only move will be classified as retract depending on the direction.
 // M218 - set hotend offset (in mm): T<extruder_number> X<offset_on_X> Y<offset_on_Y>
-// M220 S<factor in percent>- set speed factor override percentage
-// M221 S<factor in percent>- set extrude factor override percentage
-// M226 P<pin number> S<pin state>- Wait until the specified pin reaches the state required
+// M220 - S<factor in percent>- set speed factor override percentage
+// M221 - S<factor in percent>- set extrude factor override percentage
+// M226 - P<pin number> S<pin state>- Wait until the specified pin reaches the state required
 // M240 - Trigger a camera to take a photograph
 // M250 - Set LCD contrast C<contrast value> (value 0..63)
 // M280 - set servo position absolute. P: servo index, S: angle or microseconds

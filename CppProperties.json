@@ -1,0 +1,80 @@
+{
+  "configurations": [
+{
+"defines": [
+"WIN32",
+"_DEBUG",
+"UNICODE",
+"_UNICODE"
+],
+"includePath": [
+"${env.INCLUDE}",
+"D:\\3d\\3d printer\\Working firmware 10_25_2015\\Marlin-Marlin_v1\\Marlin",
+"C:\\Program Files (x86)\\Arduino\\hardware",
+"C:\\Program Files (x86)\\Arduino\\tools"
+],
+"inheritEnvironments": [
+"msvc_x86"
+],
+"intelliSenseMode": "windows-msvc-x86",
+"name": "x86-Debug"
+},
+    {
+      "inheritEnvironments": [
+        "msvc_x86"
+      ],
+      "name": "x86-Release",
+      "includePath": [
+        "${env.INCLUDE}",
+        "D:\\3d\\3d printer\\Working firmware 10_25_2015\\Marlin-Marlin_v1\\Marlin",
+       "C:\\Program Files (x86)\\Arduino\\hardware",
+        "C:\\Program Files (x86)\\Arduino\\tools"
+      ],
+      "defines": [
+        "WIN32",
+        "NDEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "intelliSenseMode": "windows-msvc-x86"
+    },
+    {
+      "inheritEnvironments": [
+        "msvc_x64"
+      ],
+      "name": "x64-Debug",
+      "includePath": [
+        "${env.INCLUDE}",
+        "D:\\3d\\3d printer\\Working firmware 10_25_2015\\Marlin-Marlin_v1\\Marlin",
+       "C:\\Program Files (x86)\\Arduino\\hardware",
+        "C:\\Program Files (x86)\\Arduino\\tools"
+      ],
+      "defines": [
+        "WIN32",
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "intelliSenseMode": "windows-msvc-x64"
+    },
+    {
+      "inheritEnvironments": [
+        "msvc_x64"
+      ],
+      "name": "x64-Release",
+      "includePath": [
+        "${env.INCLUDE}",
+        "D:\\3d\\3d printer\\Working firmware 10_25_2015\\Marlin-Marlin_v1\\Marlin",
+       "C:\\Program Files (x86)\\Arduino\\hardware",
+        "C:\\Program Files (x86)\\Arduino\\tools"
+      ],
+      "defines": [
+        "WIN32",
+        "NDEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "intelliSenseMode": "windows-msvc-x64"
+    }
+  ]
+}

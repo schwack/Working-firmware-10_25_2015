@@ -2,6 +2,11 @@
 #define CONFIGURATION_H
 
 // Rev. log:
+// 2018.12.20	
+// 2018.11.12   enable servos: m280 p<0-3> s<0-2500>
+//                  s<200 --> angle
+//                  s<500-1500-2500> --> relative position <min-center-max> 
+//
 // 2017.09.19 	set DEFAULT_AXIS_STEPS_PER_UNIT{99.19,99.22,400.00,96.28}
 //				set X_MAX_POS 215
 //				set X_MIN_POS 0
@@ -93,7 +98,7 @@
 #endif
 
 // Define this to set a custom name for your generic Mendel,
-#define CUSTOM_MENDEL_NAME "SpazBot 9.19.17"
+#define CUSTOM_MENDEL_NAME "SpazBot 11.12.2018"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
 // You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
@@ -170,9 +175,24 @@
 
 #endif
 
+
+//******************************************************************************
+// #define TEMP_SENSOR_0 0
+// #define TEMP_SENSOR_1 0
+// #define TEMP_SENSOR_2 0
+// #define TEMP_SENSOR_BED 0
+
+//******************************************************************************
+//******************************************************************************
+
+
+
+
+
+
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
 //#define TEMP_SENSOR_1_AS_REDUNDANT
-#define MAX_REDUNDANT_TEMP_SENSOR_DIFF 10
+//#define MAX_REDUNDANT_TEMP_SENSOR_DIFF 10
 
 // Actual temperature must be close to target for this long before M109 returns success
 #define TEMP_RESIDENCY_TIME 3  // (seconds)
@@ -466,7 +486,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Travel limits after homing
 #if EXTRUDERS == 1
 
- #define X_MAX_POS 230
+ #define X_MAX_POS 220
  #define X_MIN_POS 0
  #define Y_MAX_POS 220
  #define Y_MIN_POS 0
@@ -540,10 +560,10 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {99.19,99.22,400.00,96.28}  // default steps per unit for ultimaker
 #define DEFAULT_MAX_FEEDRATE          {300, 300, 19, 35}    // (mm/sec)
-#define DEFAULT_MAX_ACCELERATION      {2000,2000,100,2000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {1000,1000,100,1000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          2000    // X, Y, Z and E max acceleration in mm/s^2 for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  2000   // X, Y, Z and E max acceleration in mm/s^2 for retracts
+#define DEFAULT_ACCELERATION          1500    //   was 2000   X, Y, Z and E max acceleration in mm/s^2 for printing moves
+#define DEFAULT_RETRACT_ACCELERATION  1500   //   was 2000  X, Y, Z and E max acceleration in mm/s^2 for retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
 // The offset has to be X=0, Y=0 for the extruder 0 hotend (default extruder).
@@ -577,19 +597,19 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 //define this to enable eeprom support
 #define EEPROM_SETTINGS
 // Enable to show EEPROM Save and Load menu
-//#define EEPROM_SETTINGS_ENABLE
+#define EEPROM_SETTINGS_ENABLE
 //to disable EEPROM Serial responses and decrease program space by ~1700 byte: comment this out:
 // please keep turned on if you can.
 #define EEPROM_CHITCHAT
 
 // Preheat Constants
-#define PLA_PREHEAT_HOTEND_TEMP 215 
+#define PLA_PREHEAT_HOTEND_TEMP 205 
 #define PLA_PREHEAT_HPB_TEMP 50
-#define PLA_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+#define PLA_PREHEAT_FAN_SPEED 0   // Insert Value between 0 and 255
 
 #define ABS_PREHEAT_HOTEND_TEMP 230
 #define ABS_PREHEAT_HPB_TEMP 70
-#define ABS_PREHEAT_FAN_SPEED 255   // Insert Value between 0 and 255
+#define ABS_PREHEAT_FAN_SPEED 0   // Insert Value between 0 and 255
 
 //LCD and SD support
 //#define ULTRA_LCD  //general LCD support, also 16x2
@@ -804,7 +824,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // leaving it undefined or defining as 0 will disable the servo subsystem
 // If unsure, leave commented / disabled
 //
-//#define NUM_SERVOS 3 // Servo index starts with 0 for M280 command
+#define NUM_SERVOS 3 // Servo index starts with 0 for M280 command
 
 // Servo Endstops
 //

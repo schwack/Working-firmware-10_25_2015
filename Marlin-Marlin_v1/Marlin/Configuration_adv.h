@@ -46,16 +46,16 @@
 
 //Show Temperature ADC value
 //The M105 command return, besides traditional information, the ADC value read from temperature sensors.
-//#define SHOW_TEMP_ADC_VALUES
+#define SHOW_TEMP_ADC_VALUES
 
 //  extruder run-out prevention. 
 //if the machine is idle, and the temperature over MINTEMP, every couple of SECONDS some filament is extruded
 //#define EXTRUDER_RUNOUT_PREVENT  
-#define EXTRUDER_RUNOUT_MINTEMP 190  
-#define EXTRUDER_RUNOUT_SECONDS 30.
-#define EXTRUDER_RUNOUT_ESTEPS 14. //mm filament
-#define EXTRUDER_RUNOUT_SPEED 1500.  //extrusion speed
-#define EXTRUDER_RUNOUT_EXTRUDE 100
+//#define EXTRUDER_RUNOUT_MINTEMP 190  
+//#define EXTRUDER_RUNOUT_SECONDS 30.
+//#define EXTRUDER_RUNOUT_ESTEPS 14. //mm filament
+//#define EXTRUDER_RUNOUT_SPEED 1500.  //extrusion speed
+//#define EXTRUDER_RUNOUT_EXTRUDE 100
 
 //These defines help to calibrate the AD595 sensor in case you get wrong temperature measurements.
 //The measured temperature is defined as "actualTemp = (measuredTemp * TEMP_SENSOR_AD595_GAIN) + TEMP_SENSOR_AD595_OFFSET"
@@ -65,14 +65,14 @@
 //This is for controlling a fan to cool down the stepper drivers
 //it will turn on when any driver is enabled
 //and turn off after the set amount of seconds from last driver being disabled again
-#define CONTROLLERFAN_PIN 5 //Pin used for the fan to cool controller (-1 to disable)
-#define CONTROLLERFAN_SECS 120 //How many seconds, after all motors were disabled, the fan should run
+//#define CONTROLLERFAN_PIN 5 //Pin used for the fan to cool controller (-1 to disable)
+//#define CONTROLLERFAN_SECS 120 //How many seconds, after all motors were disabled, the fan should run
 #if MOTHERBOARD == 80
   #define  CONTROLLERFAN_PIN 7
   #define CONTROLLERFAN_SECS 120
 #endif
 
-#define CONTROLLERFAN_SPEED 255  // == full speed
+//#define CONTROLLERFAN_SPEED 255  // == full speed
 
 // When first starting the main fan, run it at full speed for the
 // given number of milliseconds.  This gets the fan spinning reliably
