@@ -12,7 +12,9 @@ Modified      Uploaded
 							Freeing memory
 
 
+3d printer firmware customized by schwack
 
+Strting from:
 
     Reprap firmware based on Sprinter and grbl.
  Copyright (C) 2011 Camiel Gubbels / Erik van der Zalm

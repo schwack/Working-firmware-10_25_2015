@@ -5,9 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "D:/3d/3d printer/Working firmware 10_25_2015/Marlin-Marlin_v1/Marlin",
+                "D:/3d/3d printer/Working firmware 10_25_2015",
                 "C:/Program Files (x86)/Arduino/",
-                "C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/",
-                "C:/Users/nunya/Documents/arduino-1.0.5-r2-at90usb1286-master/hardware/arduino/cores/arduino/"
+                "C:/Program Files (x86)/Arduino/hardware/tools/avr/avr/include/"
             ],
             "defines": [
                 "_DEBUG",

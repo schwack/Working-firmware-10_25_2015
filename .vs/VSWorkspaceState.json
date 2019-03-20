@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Marlin-Marlin_v1"
+    "\\Marlin-Marlin_v1",
+    "\\Marlin-Marlin_v1\\ArduinoAddons",
+    "\\Marlin-Marlin_v1\\Marlin"
   ],
   "SelectedNode": "\\CppProperties.json",
   "PreviewInSolutionExplorer": true

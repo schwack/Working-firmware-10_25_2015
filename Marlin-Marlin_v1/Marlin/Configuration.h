@@ -15,26 +15,13 @@
 //				set Z_MAX_POS 180
 //				set Z_MIN_POS 0
 
-// This configurtion file contains the basic settings.
-// Advanced settings can be found in Configuration_adv.h
-// BASIC SETTINGS: select your board type, temperature sensor type, axis scaling, and endstop configuration
 
-//===========================================================================
-//============================= DELTA Printer ===============================
-//===========================================================================
-// For a Delta printer replace the configuration files with the files in the
-// example_configurations/delta directory.
-//
 
-// User-specified version info of this build to display in [Pronterface, etc] terminal window during
-// startup. Implementation of an idea by Prof Braino to inform user that any changes made to this
-// build by the user have been successfully uploaded into firmware.
+
 #define STRING_VERSION_CONFIG_H __DATE__ " " __TIME__ // build date and time
 #define STRING_CONFIG_H_AUTHOR "schwackmaster" // Who made the changes.
 
 // SERIAL_PORT selects which serial port should be used for communication with the host.
-// This allows the connection of wireless adapters (for instance) to non-default port pins.
-// Serial port 0 is still used by the Arduino bootloader regardless of this setting.
 #define SERIAL_PORT 0
 
 // This determines the communication speed of the printer
@@ -46,52 +33,10 @@
 
 
 //// The following define selects which electronics board you have. Please choose the one that matches your setup
-// 10 = Gen7 custom (Alfons3 Version) "https://github.com/Alfons3/Generation_7_Electronics"
-// 11 = Gen7 v1.1, v1.2 = 11
-// 12 = Gen7 v1.3
-// 13 = Gen7 v1.4
-// 2  = Cheaptronic v1.0
-// 20 = Sethi 3D_1
-// 3  = MEGA/RAMPS up to 1.2 = 3
-
-
 
 // 33 = RAMPS 1.3 / 1.4 (Power outputs: Extruder, Bed, Fan)
 
-
-
-// 34 = RAMPS 1.3 / 1.4 (Power outputs: Extruder0, Extruder1, Bed)
-// 35 = RAMPS 1.3 / 1.4 (Power outputs: Extruder, Fan, Fan)
-// 4  = Duemilanove w/ ATMega328P pin assignment
-// 5  = Gen6
-// 51 = Gen6 deluxe
-// 6  = Sanguinololu < 1.2
-// 62 = Sanguinololu 1.2 and above
-// 63 = Melzi
-// 64 = STB V1.1
-// 65 = Azteeg X1
 // 66 = Melzi with ATmega1284 (MaKr3d version)
-// 67 = Azteeg X3
-// 68 = Azteeg X3 Pro
-// 7  = Ultimaker
-// 71 = Ultimaker (Older electronics. Pre 1.5.4. This is rare)
-// 72 = Ultimainboard 2.x (Uses TEMP_SENSOR 20)
-// 77 = 3Drag Controller
-// 8  = Teensylu
-// 80 = Rumba
-// 81 = Printrboard (AT90USB1286)
-// 82 = Brainwave (AT90USB646)
-// 83 = SAV Mk-I (AT90USB1286)
-// 84 = Teensy++2.0 (AT90USB1286) // CLI compile: DEFINES=AT90USBxx_TEENSYPP_ASSIGNMENTS HARDWARE_MOTHERBOARD=84  make
-// 9  = Gen3+
-// 70 = Megatronics
-// 701= Megatronics v2.0
-// 702= Minitronics v1.0
-// 90 = Alpha OMCA board
-// 91 = Final OMCA board
-// 301 = Rambo
-// 21 = Elefu Ra Board (v3)
-// 88 = 5DPrint D8 Driver Board
 
 #ifndef MOTHERBOARD
    #define MOTHERBOARD 33 
@@ -101,7 +46,6 @@
 #define CUSTOM_MENDEL_NAME "SpazBot 11.12.2018"
 
 // Define this to set a unique identifier for this printer, (Used by some programs to differentiate between machines)
-// You can use an online service to generate a random UUID. (eg http://www.uuidgenerator.net/version4)
 // #define MACHINE_UUID "00000000-0000-0000-0000-000000000000"
 
 // This defines the number of extruders
@@ -136,26 +80,22 @@
 // 5 is 100K thermistor - ATC Semitec 104GT-2 (Used in ParCan & J-Head) (4.7k pullup)
 // 6 is 100k EPCOS - Not as accurate as table 1 (created using a fluke thermocouple) (4.7k pullup)
 // 7 is 100k Honeywell thermistor 135-104LAG-J01 (4.7k pullup)
-// 71 is 100k Honeywell thermistor 135-104LAF-J01 (4.7k pullup)
 // 8 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup)
 // 9 is 100k GE Sensing AL03006-58.2K-97-G1 (4.7k pullup)
 // 10 is 100k RS thermistor 198-961 (4.7k pullup)
 // 11 is 100k beta 3950 1% thermistor (4.7k pullup)
 // 12 is 100k 0603 SMD Vishay NTCS0603E3104FXT (4.7k pullup) (calibrated for Makibox hot bed)
 // 20 is the PT100 circuit found in the Ultimainboard V2.x
-// 60 is 100k Maker's Tool Works Kapton Bed Thermistor beta=3950
-//
-//    1k ohm pullup tables - This is not normal, you would have to have changed out your 4.7k for 1k
-//                          (but gives greater accuracy and more stable PID)
 // 51 is 100k thermistor - EPCOS (1k pullup)
 // 52 is 200k thermistor - ATC Semitec 204GT-2 (1k pullup)
 // 55 is 100k thermistor - ATC Semitec 104GT-2 (Used in ParCan & J-Head) (1k pullup)
-//
-// 1047 is Pt1000 with 4k7 pullup
-// 1010 is Pt1000 with 1k pullup (non standard)
-// 147 is Pt100 with 4k7 pullup
-// 110 is Pt100 with 1k pullup (non standard)
+// 60 is 100k Maker's Tool Works Kapton Bed Thermistor beta=3950
 // 70 is 500C thermistor for Pico hot end
+// 71 is 100k Honeywell thermistor 135-104LAF-J01 (4.7k pullup)
+// 110 is Pt100 with 1k pullup (non standard)
+// 147 is Pt100 with 4k7 pullup
+// 1010 is Pt1000 with 1k pullup (non standard)
+// 1047 is Pt1000 with 4k7 pullup
 
 #if EXTRUDERS == 1
 
@@ -175,8 +115,9 @@
 
 #endif
 
-
 //******************************************************************************
+// debug
+
 // #define TEMP_SENSOR_0 0
 // #define TEMP_SENSOR_1 0
 // #define TEMP_SENSOR_2 0
@@ -184,10 +125,6 @@
 
 //******************************************************************************
 //******************************************************************************
-
-
-
-
 
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
@@ -486,20 +423,20 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 // Travel limits after homing
 #if EXTRUDERS == 1
 
- #define X_MAX_POS 220
+/*  #define X_MAX_POS 220
  #define X_MIN_POS 0
  #define Y_MAX_POS 220
  #define Y_MIN_POS 0
  #define Z_MAX_POS 180
  #define Z_MIN_POS 0
-
+ */
  #if MOTHERBOARD == 80
     #define Z_MAX_POS 206
- #endif
+ #endif  //MOTHERBOARD
 
- #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
+/*  #define X_MAX_LENGTH (X_MAX_POS - X_MIN_POS)
  #define Y_MAX_LENGTH (Y_MAX_POS - Y_MIN_POS)
- #define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS)
+ #define Z_MAX_LENGTH (Z_MAX_POS - Z_MIN_POS) */
 
 // The position of the homing switches
 //#define MANUAL_HOME_POSITIONS  // If defined, MANUAL_*_HOME_POS below will be used
@@ -516,7 +453,7 @@ const bool Z_MAX_ENDSTOP_INVERTING = true; // set to true to invert the logic of
 
 //#define MANUAL_Z_HOME_POS 402 // For delta: Distance between nozzle and print surface after homing.
 
-#endif
+#endif  //EXTRUDERS == 1
 
 #if EXTRUDERS == 2
  
