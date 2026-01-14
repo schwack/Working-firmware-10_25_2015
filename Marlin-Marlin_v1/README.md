@@ -1,14 +1,14 @@
 Rev. history:
-2017.09.19	pins.h					Stripped to bare min.
-			Configuration.h			set DEFAULT_AXIS_STEPS_PER_UNIT{99.19,99.22,400.00,96.28}  
-                                    set X_MAX_POS 215                                          
-                                    set X_MIN_POS 0                                            
-                                    set Y_MAX_POS 215                                          
-                                    set Y_MIN_POS 0                                            
-                                    set Z_MAX_POS 180                                          
-                                    set Z_MIN_POS 0                                            
+2017.09.19	pins.h			Stripped to bare min.
+		Configuration.h		set DEFAULT_AXIS_STEPS_PER_UNIT{99.19,99.22,400.00,96.28}  
+                     	                set X_MAX_POS 215                                          
+                     	                set X_MIN_POS 0                                            
+                    	                set Y_MAX_POS 215                                          
+                     	                set Y_MIN_POS 0                                            
+                    	                set Z_MAX_POS 180                                          
+                     	                set Z_MIN_POS 0                                            
 
-
+2026.01.13	Marlin_main.cpp		Fix G0 to always use rapid.  Ignore any feedrate on a G0 line.
                                     
 ==========================          
 Marlin 3D Printer Firmware          

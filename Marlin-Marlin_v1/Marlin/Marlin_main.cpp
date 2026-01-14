@@ -1313,27 +1313,39 @@ void process_commands()
   {
     switch((int)code_value())
     {
-    case 0: // G0 -> G1
-    case 1: // G1
-      if(Stopped == false) {
-        get_coordinates(); // For X Y Z E F
-          #ifdef FWRETRACT
-            if(autoretract_enabled)
-            if( !(code_seen('X') || code_seen('Y') || code_seen('Z')) && code_seen('E')) {
-              float echange=destination[E_AXIS]-current_position[E_AXIS];
-              if((echange<-MIN_RETRACT && !retracted) || (echange>MIN_RETRACT && retracted)) { //move appears to be an attempt to retract or recover
-                  current_position[E_AXIS] = destination[E_AXIS]; //hide the slicer-generated retract/recover from calculations
-                  plan_set_e_position(current_position[E_AXIS]); //AND from the planner
-                  retract(!retracted);
-                  return;
-              }
-            }
-          #endif //FWRETRACT
-        prepare_move();
-        //ClearToSend();
-        return;
-      }
-      break;
+case 0: // G0 -> G1
+case 1: // G1
+  if (Stopped == false) {
+    float old_feedrate = feedrate;  // Save last feedrate for G0 fix
+    get_coordinates(); // For X Y Z E F
+
+    #ifdef FWRETRACT
+      if (autoretract_enabled)
+        if (!(code_seen('X') || code_seen('Y') || code_seen('Z')) && code_seen('E')) {
+          float echange = destination[E_AXIS] - current_position[E_AXIS];
+          if ((echange < MIN_RETRACT && !retracted) || (echange > MIN_RETRACT && retracted)) {
+            current_position[E_AXIS] = destination[E_AXIS];
+            plan_set_e_position(current_position[E_AXIS]);
+            retract(!retracted);
+            return;
+          }
+        }
+    #endif //FWRETRACT
+
+    if (gcode == 0) {  // if rapid.....
+      feedrate = DEFAULT_MAX_FEEDRATE[X_AXIS] * 60.0;  // set fast feedrate
+    }
+
+    prepare_move();
+
+    if (gcode == 0) {  if feedrate changed....
+      feedrate = old_feedrate;  //  change it back.  Simple.
+    }
+
+    //ClearToSend();
+    return;
+  }
+  break;
     case 2: // G2  - CW ARC
       if(Stopped == false) {
         get_arc_coordinates();
